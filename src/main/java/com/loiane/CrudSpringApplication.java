@@ -29,15 +29,4 @@ public class CrudSpringApplication {
 			courseRepository.save(c);
 		};
 	}
-	CommandLineRunner initDatabaseAluno(AlunoRepository alunoRepository) {
-		return args -> {
-			alunoRepository.deleteAll();
-
-			Aluno a = new Aluno();
-			a.setNome("Angular com Spring");
-			a.setCpf("5555");
-
-			alunoRepository.save(a);
-		};
-	}
 }
