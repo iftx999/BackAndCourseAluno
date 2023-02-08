@@ -39,8 +39,8 @@ public class AlunoService {
                 .orElseThrow(() -> new RecordNotFoundException(idAluno));
     }
 
-    public AlunoDTO create(@Valid @NotNull AlunoDTO course) {
-        return alunoMapper.toDTO(alunoRepository.save(alunoMapper.toEntity(course)));
+    public AlunoDTO create(@Valid @NotNull AlunoDTO aluno) {
+        return alunoMapper.toDTO(alunoRepository.save(alunoMapper.toEntity(aluno)));
     }
 
     public AlunoDTO update(@NotNull @Positive Long idAluno, @Valid @NotNull AlunoDTO aluno) {

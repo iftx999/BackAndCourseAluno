@@ -2,6 +2,8 @@ package com.loiane.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
@@ -17,16 +19,13 @@ public class Aluno {
     @JsonProperty("idAluno")
     private Long idAluno;
 
-
     @NotNull
     @Length(max = 10)
     @Column(length = 10, nullable = false)
     private String cpf;
 
-    @NotNull
-    @Length(max = 10)
-    @Column(length = 10, nullable = false)
-    private Integer idade;
+    @Column(scale=2)
+    private Double idade;
 
     @NotNull
     @Length(max = 10)
