@@ -20,8 +20,8 @@ public class Aluno {
     private Long idAluno;
 
     @NotNull
-    @Length(max = 10)
-    @Column(length = 10, nullable = false)
+    @Length(max = 9)
+    @Column(length = 9, nullable = false)
     private String cpf;
 
     @Column(scale=2)
