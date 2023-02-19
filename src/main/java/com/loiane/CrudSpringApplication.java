@@ -29,4 +29,18 @@ public class CrudSpringApplication {
 			courseRepository.save(c);
 		};
 	}
+
+	@Bean
+	CommandLineRunner initDatabaseAluno(AlunoRepository alunoRepository) {
+		return args -> {
+			alunoRepository.deleteAll();
+
+			Aluno a = new Aluno();
+			a.setIdade(4.0);
+			a.setNome("matheus");
+			a.setCpf("55555");
+
+			alunoRepository.save(a);
+		};
+	}
 }
