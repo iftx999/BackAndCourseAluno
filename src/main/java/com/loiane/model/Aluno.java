@@ -25,7 +25,7 @@ public class Aluno {
     private String cpf;
 
     @Column(scale=2)
-    private Double idade;
+    private Integer idade;
 
     @NotNull
     @Length(max = 100)
