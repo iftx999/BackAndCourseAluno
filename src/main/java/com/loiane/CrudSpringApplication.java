@@ -36,7 +36,7 @@ public class CrudSpringApplication {
 			alunoRepository.deleteAll();
 
 			Aluno a = new Aluno();
-			a.setIdade(4.0);
+			a.setIdade(4);
 			a.setNome("matheus");
 			a.setCpf("55555");
 
