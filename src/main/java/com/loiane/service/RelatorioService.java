@@ -9,6 +9,8 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -17,7 +19,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+@Validated
+@Service
 public class RelatorioService {
+
+    private static final String Rel_Aluno = "/reports/Blank_A4_5.jrxml";
+
 
     @Autowired
     private AlunoRepository alunoRepository ;
@@ -46,7 +53,7 @@ public class RelatorioService {
 
 
 
-        return genReport(relAluno, params, );
+        return genReport(relAluno, params, Rel_Aluno );
     }
 
 

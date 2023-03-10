@@ -21,11 +21,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/aluno")
 public class AlunoController {
-
-    private final AlunoService alunoService;
+    @Autowired
+    private  AlunoService alunoService;
 
     @Autowired
-    RelatorioService relatorioService;
+    private  RelatorioService relatorioService;
 
     public AlunoController(AlunoService alunoService) {
         this.alunoService = alunoService;
