@@ -2,21 +2,30 @@ package com.loiane.controller;
 
 import com.loiane.dto.AlunoDTO;
 import com.loiane.service.AlunoService;
+import com.loiane.service.RelatorioService;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.OutputStream;
 import java.util.List;
 
 @Validated
 @RestController
 @RequestMapping("/api/aluno")
 public class AlunoController {
+    @Autowired
+    private  AlunoService alunoService;
 
-    private final AlunoService alunoService;
+    @Autowired
+    private  RelatorioService relatorioService;
 
     public AlunoController(AlunoService alunoService) {
         this.alunoService = alunoService;
@@ -44,9 +53,27 @@ public class AlunoController {
         return alunoService.update(id, aluno);
     }
 
+
+    @RequestMapping(value = "/relAluno/{idAluno}", method = RequestMethod.GET)
+    public void PrintRelAluno(@PathVariable Long idAluno, HttpServletResponse response) throws Exception {
+        JasperPrint jprint = null;
+
+        response.setContentType("application/pdf");
+        response.setHeader("Content-Disposition", "attachment; filename=\"Aluno.pdf\"");
+
+        OutputStream out = response.getOutputStream();
+        out.flush();
+        jprint = relatorioService.genRelAluno(idAluno);
+
+        JasperExportManager.exportReportToPdfStream(jprint, out);
+    }
+
+
     @DeleteMapping("/{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable @NotNull @Positive Long id) {
         alunoService.delete(id);
     }
 }
+
+
