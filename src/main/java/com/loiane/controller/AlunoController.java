@@ -54,7 +54,7 @@ public class AlunoController {
     }
 
 
-    @RequestMapping(value = "/{idAluno}/relAluno/print", method = RequestMethod.GET)
+    @RequestMapping(value = "/relAluno/{idAluno}", method = RequestMethod.GET)
     public void PrintRelAluno(@PathVariable Long idAluno, HttpServletResponse response) throws Exception {
         JasperPrint jprint = null;
 
