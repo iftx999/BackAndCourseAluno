@@ -23,30 +23,25 @@
 	<pageHeader>
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
-	<columnHeader>
-		<band height="156" splitType="Stretch">
+	<detail>
+		<band height="253" splitType="Stretch">
 			<staticText>
-				<reportElement x="20" y="6" width="521" height="34" uuid="24b44e79-0289-4b61-a6e3-d8ff6cbe2f9f"/>
+				<reportElement x="7" y="11" width="543" height="49" uuid="fcabd39c-417f-4f2a-82d1-d8a2222c0e76"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[Eu, __________________________________, portador do cpf: ___,___,___-__ Venho atráves deste documento informar que sou responsável pelo o ALUNO(A):]]></text>
+				<text><![CDATA[Eu,_____________________________, portador do cpf:____,____,____-___, sou responsavel pelo o aluno(a):]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="20" y="67" width="530" height="81" uuid="129a3e5f-30c6-4448-9ea6-b9882fa0160d"/>
-				<text><![CDATA[Informo que ao assinar este documento eu afirmo o compromiso de cumprir a minha responsabilidade de cumprir todas as obrigações necessárias para o que o ALUNO:______________________ tenha todo o aparato físico e material para estudar.]]></text>
+				<reportElement x="10" y="80" width="541" height="161" uuid="f756760a-a2ae-4ea9-98d5-75d3a144e2c4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Venho através deste documento informar o meu telefone () ______-_______ para contato, e informo que atualmente eu moro no endereço _______________________________________________, disponibilizo estes dados para que a escola possa entrar em contato comigo caso haja precisão.]]></text>
 			</staticText>
 		</band>
-	</columnHeader>
-	<pageFooter>
-		<band height="78" splitType="Stretch"/>
-	</pageFooter>
+	</detail>
 	<summary>
-		<band height="42" splitType="Stretch">
-			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="410" y="10" width="140" height="22" uuid="00fa0043-7626-4a57-a975-0a6b09855dba"/>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="42" splitType="Stretch"/>
 	</summary>
 </jasperReport>
