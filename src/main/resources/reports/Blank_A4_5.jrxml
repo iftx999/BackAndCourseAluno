@@ -4,30 +4,49 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter2.jrdax"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<queryString>
-		<![CDATA[select nome, cpf, idade from aluno where id_aluno = 1 ]]>
+		<![CDATA[select nome, cpf, idade from aluno where id_aluno = 1]]>
 	</queryString>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="540" height="61" uuid="7169e2b6-ed1b-40bd-a7ef-66c5cfc425b9"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Secretaria Municipal de Educação Pública]]></text>
+			</staticText>
+		</band>
 	</title>
 	<pageHeader>
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="156" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="6" width="521" height="34" uuid="24b44e79-0289-4b61-a6e3-d8ff6cbe2f9f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Eu, __________________________________, portador do cpf: ___,___,___-__ Venho atráves deste documento informar que sou responsável pelo o ALUNO(A):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="67" width="530" height="81" uuid="129a3e5f-30c6-4448-9ea6-b9882fa0160d"/>
+				<text><![CDATA[Informo que ao assinar este documento eu afirmo o compromiso de cumprir a minha responsabilidade de cumprir todas as obrigações necessárias para o que o ALUNO:______________________ tenha todo o aparato físico e material para estudar.]]></text>
+			</staticText>
+		</band>
 	</columnHeader>
-	<detail>
-		<band height="125" splitType="Stretch"/>
-	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="78" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band height="42" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="410" y="10" width="140" height="22" uuid="00fa0043-7626-4a57-a975-0a6b09855dba"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
 	</summary>
 </jasperReport>
