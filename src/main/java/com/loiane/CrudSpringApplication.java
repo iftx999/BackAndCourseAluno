@@ -38,7 +38,7 @@ public class CrudSpringApplication {
 			Aluno a = new Aluno();
 			a.setIdade(4);
 			a.setNome("matheus");
-			a.setCpf("55555");
+			a.setCpf("45644444");
 
 			alunoRepository.save(a);
 		};

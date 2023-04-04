@@ -11,5 +11,5 @@ public record AlunoDTO(
         @NotBlank @NotNull @Length(min = 5, max = 100) String nome,
         //alunos
         @NotNull Integer idade,
-        @NotNull @Length(min = 5, max = 100)  String cpf) {
+        @NotNull @Length(min = 16, max = 100)  String cpf) {
 }
