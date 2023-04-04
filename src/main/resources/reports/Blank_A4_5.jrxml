@@ -1,31 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_5" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="68f88913-55f7-4597-b117-30e43ac8b33c">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter2.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<queryString>
-		<![CDATA[]]>
+		<![CDATA[select nome, cpf, idade from aluno where id_aluno = 1]]>
 	</queryString>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="540" height="61" uuid="7169e2b6-ed1b-40bd-a7ef-66c5cfc425b9"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Secretaria Municipal de Educação Pública]]></text>
+			</staticText>
+		</band>
 	</title>
 	<pageHeader>
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch"/>
-	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="253" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="11" width="543" height="49" uuid="fcabd39c-417f-4f2a-82d1-d8a2222c0e76"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Eu,_____________________________, portador do cpf:____,____,____-___, sou responsavel pelo o aluno(a):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="80" width="541" height="161" uuid="f756760a-a2ae-4ea9-98d5-75d3a144e2c4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Venho através deste documento informar o meu telefone () ______-_______ para contato, e informo que atualmente eu moro no endereço _______________________________________________, disponibilizo estes dados para que a escola possa entrar em contato comigo caso haja precisão.]]></text>
+			</staticText>
+		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>
 	</summary>
