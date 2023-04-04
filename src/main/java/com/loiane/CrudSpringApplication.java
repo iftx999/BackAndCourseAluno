@@ -39,6 +39,10 @@ public class CrudSpringApplication {
 			a.setIdade(4);
 			a.setNome("matheus");
 			a.setCpf("45644444");
+			a.setResponsavel("Pamelly Carv");
+			a.setContato("iftx159@gmail.com");
+
+
 
 			alunoRepository.save(a);
 		};
