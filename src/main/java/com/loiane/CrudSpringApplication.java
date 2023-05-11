@@ -30,21 +30,5 @@ public class CrudSpringApplication {
 		};
 	}
 
-	@Bean
-	CommandLineRunner initDatabaseAluno(AlunoRepository alunoRepository) {
-		return args -> {
-			alunoRepository.deleteAll();
 
-			Aluno a = new Aluno();
-			a.setIdade(4);
-			a.setNome("matheus");
-			a.setCpf("45644444");
-			a.setResponsavel("Pamelly Carv");
-			a.setContato("iftx159@gmail.com");
-
-
-
-			alunoRepository.save(a);
-		};
-	}
 }

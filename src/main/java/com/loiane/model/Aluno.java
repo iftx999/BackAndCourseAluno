@@ -12,6 +12,7 @@ import org.hibernate.validator.constraints.Length;
 
 @Data
 @Entity
+@Table(name = "Aluno")
 public class Aluno {
 
     @Id
@@ -41,5 +42,13 @@ public class Aluno {
     @Length(max = 100)
     @Column(length = 100, nullable = false)
     private String contato;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "idCourse")
+    private Course idcourse;
+
+
+
 
 }
