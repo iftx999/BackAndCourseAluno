@@ -72,7 +72,7 @@ public class AlunoController {
         JasperExportManager.exportReportToPdfStream(jprint, out);
     }
 
-    @GetMapping("/total")
+    @GetMapping("/totalAluno")
     public Long getTotalAlunos() {
         return alunoRepository.count();
     }
