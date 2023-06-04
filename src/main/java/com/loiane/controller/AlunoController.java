@@ -1,6 +1,7 @@
 package com.loiane.controller;
 
 import com.loiane.dto.AlunoDTO;
+import com.loiane.repository.AlunoRepository;
 import com.loiane.service.AlunoService;
 import com.loiane.service.RelatorioService;
 import jakarta.servlet.http.HttpServletResponse;
@@ -23,6 +24,9 @@ import java.util.List;
 public class AlunoController {
     @Autowired
     private  AlunoService alunoService;
+
+    @Autowired
+    private AlunoRepository alunoRepository;
 
     @Autowired
     private  RelatorioService relatorioService;
@@ -66,6 +70,11 @@ public class AlunoController {
         jprint = relatorioService.genRelAluno(idAluno);
 
         JasperExportManager.exportReportToPdfStream(jprint, out);
+    }
+
+    @GetMapping("/totalAluno")
+    public Long getTotalAlunos() {
+        return alunoRepository.count();
     }
 
 

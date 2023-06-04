@@ -2,6 +2,7 @@ package com.loiane.controller;
 
 import java.util.List;
 
+import com.loiane.repository.CourseRepository;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -9,6 +10,7 @@ import jakarta.validation.constraints.Positive;
 import com.loiane.dto.CourseDTO;
 import com.loiane.service.CourseService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,6 +30,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class CourseController {
 
     private final CourseService courseService;
+
+    @Autowired
+    private CourseRepository courseRepository;
 
     public CourseController(CourseService courseService) {
         this.courseService = courseService;
@@ -59,5 +64,10 @@ public class CourseController {
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable @NotNull @Positive Long id) {
         courseService.delete(id);
+    }
+
+    @GetMapping("/totalCourse")
+    public Long getTotalCourse()  {
+        return courseRepository.count();
     }
 }
