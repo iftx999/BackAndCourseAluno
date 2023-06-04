@@ -43,7 +43,6 @@ public class Aluno {
     @Column(length = 100, nullable = false)
     private String contato;
 
-    @NotNull
     @ManyToOne
     @JoinColumn(name = "idCourse")
     private Course idcourse;
