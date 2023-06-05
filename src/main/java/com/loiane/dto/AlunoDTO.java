@@ -2,6 +2,7 @@ package com.loiane.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import com.loiane.model.Course;
 import jakarta.validation.constraints.*;
 import org.hibernate.validator.constraints.Length;
 
@@ -20,5 +21,13 @@ public record AlunoDTO(
 
         //alunos
         @NotNull Integer idade,
-        @NotNull @Length(min = 16, max = 100)  String cpf) {
+
+
+        @NotNull @Length(min = 16, max = 100)  String cpf,
+
+        @JsonProperty("idCourse")
+        Course idCourse
+
+
+        ) {
 }

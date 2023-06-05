@@ -1,6 +1,7 @@
 package com.loiane.controller;
 
 import com.loiane.dto.AlunoDTO;
+import com.loiane.model.Course;
 import com.loiane.repository.AlunoRepository;
 import com.loiane.service.AlunoService;
 import com.loiane.service.RelatorioService;
@@ -48,13 +49,16 @@ public class AlunoController {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public AlunoDTO create(@RequestBody @Valid @NotNull AlunoDTO aluno) {
+
         return alunoService.create(aluno);
     }
 
     @PutMapping("/{id}")
     public AlunoDTO update(@PathVariable @NotNull @Positive Long id,
                            @RequestBody @Valid @NotNull AlunoDTO aluno) {
+        System.out.println(aluno);
         return alunoService.update(id, aluno);
+
     }
 
 

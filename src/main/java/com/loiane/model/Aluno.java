@@ -2,12 +2,8 @@ package com.loiane.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
-import org.hibernate.annotations.SQLDelete;
 import org.hibernate.validator.constraints.Length;
 
 @Data
@@ -45,7 +41,7 @@ public class Aluno {
 
     @ManyToOne
     @JoinColumn(name = "idCourse")
-    private Course idcourse;
+    private Course idCourse;
 
 
 

@@ -8,6 +8,7 @@ import com.loiane.repository.AlunoRepository;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import jdk.swing.interop.SwingInterOpUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,12 +46,15 @@ public class AlunoService {
 
     public AlunoDTO update(@NotNull @Positive Long idAluno, @Valid @NotNull AlunoDTO aluno) {
         return alunoRepository.findById(idAluno)
+
                 .map(recordFound -> {
                     recordFound.setNome(aluno.nome());
                     recordFound.setCpf(aluno.cpf());
                     return alunoMapper.toDTO(alunoRepository.save(recordFound));
                 }).orElseThrow(() -> new RecordNotFoundException(idAluno));
+
     }
+
 
     public void delete(@PathVariable @NotNull @Positive Long idAluno) {
         alunoRepository.delete(alunoRepository.findById(idAluno)

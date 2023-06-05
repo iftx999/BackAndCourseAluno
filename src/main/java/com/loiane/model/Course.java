@@ -42,4 +42,14 @@ public class Course {
     @Pattern(regexp = "Ativo|Inativo")
     @Column(length = 10, nullable = false)
     private String status = "Ativo";
+
+
+
+    public Course(Long id) {
+        this.id = id;
+    }
+
+    public Course() {
+
+    }
 }

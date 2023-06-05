@@ -12,7 +12,9 @@ public class AlunoMapper {
         if (aluno == null) {
             return null;
         }
-        return new AlunoDTO(aluno.getIdAluno(), aluno.getNome(),  aluno.getResponsavel(), aluno.getContato(), aluno.getIdade(), aluno.getCpf());
+        return new AlunoDTO(aluno.getIdAluno(),  aluno.getNome(),  aluno.getResponsavel(), aluno.getContato(), aluno.getIdade(), aluno.getCpf(),aluno.getIdCourse()
+
+        );
     }
 
     public Aluno toEntity(AlunoDTO alunoDTO) {
@@ -30,7 +32,12 @@ public class AlunoMapper {
         aluno.setIdade(alunoDTO.idade());
         aluno.setContato(alunoDTO.contato());
         aluno.setResponsavel(alunoDTO.responsavel());
+        aluno.setIdCourse(alunoDTO.idCourse());
+
+        System.out.println(aluno);
 
         return aluno;
     }
+
+
 }
