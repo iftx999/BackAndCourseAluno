@@ -27,10 +27,7 @@ public class Professor {
     @Column(length = 100, nullable = false)
     private String nameProf;
 
-    @NotBlank
     @NotNull
-    @Length(min = 5, max = 100)
-    @Column(length = 100, nullable = false)
     private Date nascimento;
 
 
@@ -52,6 +49,11 @@ public class Professor {
     @Length(min = 5, max = 100)
     @Column(length = 100, nullable = false)
     private String email;
+
+    @NotNull
+    @Length(min = 5, max = 100)
+    @Column(length = 100, nullable = false)
+    private Double salario;
 
 
 
