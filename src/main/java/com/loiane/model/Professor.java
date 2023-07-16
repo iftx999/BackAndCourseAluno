@@ -1,6 +1,7 @@
 package com.loiane.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -28,6 +29,7 @@ public class Professor {
     private String nameProf;
 
     @NotNull
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date nascimento;
 
 
@@ -51,7 +53,6 @@ public class Professor {
     private String email;
 
     @NotNull
-    @Length(min = 5, max = 100)
     @Column(length = 100, nullable = false)
     private Double salario;
 

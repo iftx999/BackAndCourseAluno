@@ -45,6 +45,7 @@ public class CrudSpringApplication {
 			p.setNascimento(nascimento);			p.setEndereco("Rua Boa morte ");
 			p.setEmail("matheus@gmail.com");
 			p.setTelefone("19988048209");
+			p.setSalario(3.4);
 
 			profesorRepository.save(p);
 		};

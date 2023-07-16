@@ -1,5 +1,6 @@
 package com.loiane.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DatabindException;
 import jakarta.validation.constraints.NotBlank;
@@ -17,13 +18,14 @@ public record ProfessorDTO(
 
 
         @NotNull
+        @JsonFormat(pattern="yyyy-MM-dd")
         Date nascimento,
 
         @NotBlank @NotNull @Length(min = 5, max = 100) String endereco,
 
         @NotBlank @NotNull @Length(min = 5, max = 100) String email,
 
-        @NotBlank @NotNull @Length(min = 5, max = 100) Double salario,
+       @NotNull  Double salario,
 
 
 
