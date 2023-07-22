@@ -22,7 +22,7 @@ public class Aluno {
 
     @NotNull
     @Length(max = 16)
-    @Column(length = 16, nullable = false)
+    @Column(length = 11, nullable = false)
     private String cpf;
 
     @Column(scale=2)

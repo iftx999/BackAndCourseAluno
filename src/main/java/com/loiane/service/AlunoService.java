@@ -40,7 +40,9 @@ public class AlunoService {
     }
 
     public AlunoDTO create(@Valid @NotNull AlunoDTO aluno) {
+        System.out.println(aluno);
         return alunoMapper.toDTO(alunoRepository.save(alunoMapper.toEntity(aluno)));
+
     }
 
     public AlunoDTO update(@NotNull @Positive Long idAluno, @Valid @NotNull AlunoDTO aluno) {
