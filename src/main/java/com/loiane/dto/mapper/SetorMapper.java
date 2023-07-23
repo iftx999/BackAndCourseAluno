@@ -19,11 +19,11 @@ public class SetorMapper {
         }
 
         Setor setor = new Setor();
-        if (SetorDTO.class() != null) {
-            setor.setId(SetorDTO.id());
+        if (setorDTO.id() != null) {
+            setor.setId(setorDTO.id());
         }
-        setor.setId(SetorDTO.id());
-        setor.setSetor(SetorDTO.setor());
+        setor.setId(setorDTO.id());
+        setor.setSetor(setorDTO.setor());
 
         return setor;
     }
