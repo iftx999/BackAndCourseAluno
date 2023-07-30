@@ -1,7 +1,5 @@
 package com.loiane.model;
 
-
-import com.fasterxml.jackson.annotation.JsonProperty;import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -9,11 +7,11 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
+
 @Data
 @Entity
-@Table(name = "Setor")
+@Table(name = "Setors")
 public class Setor {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +23,6 @@ public class Setor {
     @Length(min = 5, max = 100)
     @Column(length = 100, nullable = false)
     private String setorName;
-
 
     public Long getIdSetor() {
         return idSetor;
@@ -41,10 +38,6 @@ public class Setor {
 
     public void setSetorName(String setorName) {
         this.setorName = setorName;
-    }
-
-    public Setor(Long id) {
-        this.idSetor = id;
     }
 
     public Setor() {

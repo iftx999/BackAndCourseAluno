@@ -52,6 +52,7 @@ public class ProfessorService {
     public ProfessorDTO update(@NotNull @Positive Long idProfessor, @Valid @NotNull ProfessorDTO professorDTO) {
         return profesorRepository.findById(idProfessor)
                 .map(recordFound -> {
+                   // recordFound.setIdProfessor(professorDTO.idProfessor());
                     recordFound.setNameProf(professorDTO.nameProf());
                     recordFound.setTelefone(professorDTO.telefone());
                     recordFound.setEmail(professorDTO.email());

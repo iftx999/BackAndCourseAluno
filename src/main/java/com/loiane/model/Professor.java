@@ -56,23 +56,23 @@ public class Professor {
     @Column(length = 100, nullable = false)
     private String email;
 
-    @NotBlank
-    @NotNull
-    @Length(min = 5, max = 100)
-    @Column(length = 100, nullable = false)
-    private Setor setor;
+    @ManyToOne
+    @JoinColumn(name = "id_setor")
+    private Setor idSetor;
 
-    public Setor getSetor() {
-        return setor;
-    }
-
-    public void setSetor(Setor setor) {
-        this.setor = setor;
-    }
 
     @NotNull
     @Column(length = 100, nullable = false)
     private Double salario;
+
+    public Setor getIdSetor() {
+        return idSetor;
+    }
+
+    public void setIdSetor(Setor idSetor) {
+        this.idSetor = idSetor;
+    }
+
 
 
     public Long getIdProfessor() {

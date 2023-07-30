@@ -2,7 +2,6 @@ package com.loiane.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.loiane.model.Setor;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

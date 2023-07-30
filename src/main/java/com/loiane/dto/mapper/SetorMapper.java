@@ -2,7 +2,9 @@ package com.loiane.dto.mapper;
 
 import com.loiane.dto.SetorDTO;
 import com.loiane.model.Setor;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SetorMapper {
 
     public SetorDTO toDTO(Setor setor) {
