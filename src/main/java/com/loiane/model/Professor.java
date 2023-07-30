@@ -28,6 +28,10 @@ public class Professor {
     @Column(length = 100, nullable = false)
     private String nameProf;
 
+    @ManyToOne
+    @JoinColumn(name = "idsetor")
+    private Setor idsetor;
+
     @NotNull
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date nascimento;
@@ -52,14 +56,86 @@ public class Professor {
     @Column(length = 100, nullable = false)
     private String email;
 
+    @NotBlank
+    @NotNull
+    @Length(min = 5, max = 100)
+    @Column(length = 100, nullable = false)
+    private Setor setor;
+
+    public Setor getSetor() {
+        return setor;
+    }
+
+    public void setSetor(Setor setor) {
+        this.setor = setor;
+    }
+
     @NotNull
     @Column(length = 100, nullable = false)
     private Double salario;
 
 
+    public Long getIdProfessor() {
+        return idProfessor;
+    }
 
+    public void setIdProfessor(Long idProfessor) {
+        this.idProfessor = idProfessor;
+    }
 
+    public String getNameProf() {
+        return nameProf;
+    }
 
+    public void setNameProf(String nameProf) {
+        this.nameProf = nameProf;
+    }
 
+    public Setor getIdsetor() {
+        return idsetor;
+    }
 
+    public void setIdsetor(Setor idsetor) {
+        this.idsetor = idsetor;
+    }
+
+    public Date getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(Date nascimento) {
+        this.nascimento = nascimento;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(Double salario) {
+        this.salario = salario;
+    }
 }

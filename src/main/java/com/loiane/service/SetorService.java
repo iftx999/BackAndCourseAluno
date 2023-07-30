@@ -49,7 +49,7 @@ public class SetorService {
     public SetorDTO update(@NotNull @Positive Long id, @Valid @NotNull SetorDTO setorDTO) {
         return setorRepository.findById(id)
                 .map(recordFound -> {
-                    recordFound.setSetor(setorDTO.setor());
+                    recordFound.setSetorName(setorDTO.setorName());
 
                     return setorMapper.toDTO(setorRepository.save(recordFound));
                 }).orElseThrow(() -> new RecordNotFoundException(id));

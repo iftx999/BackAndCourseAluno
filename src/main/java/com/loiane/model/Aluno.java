@@ -48,6 +48,59 @@ public class Aluno {
     private Course idcourse;
 
 
+    public Long getIdAluno() {
+        return idAluno;
+    }
 
+    public void setIdAluno(Long idAluno) {
+        this.idAluno = idAluno;
+    }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Integer getIdade() {
+        return idade;
+    }
+
+    public void setIdade(Integer idade) {
+        this.idade = idade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getResponsavel() {
+        return responsavel;
+    }
+
+    public void setResponsavel(String responsavel) {
+        this.responsavel = responsavel;
+    }
+
+    public String getContato() {
+        return contato;
+    }
+
+    public void setContato(String contato) {
+        this.contato = contato;
+    }
+
+    public Course getIdcourse() {
+        return idcourse;
+    }
+
+    public void setIdcourse(Course idcourse) {
+        this.idcourse = idcourse;
+    }
 }

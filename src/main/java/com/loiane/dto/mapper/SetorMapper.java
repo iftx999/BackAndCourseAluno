@@ -9,7 +9,7 @@ public class SetorMapper {
         if (setor == null) {
             return null;
         }
-        return new SetorDTO(setor.getId(), setor.getSetor());
+        return new SetorDTO(setor.getIdSetor(), setor.getSetorName());
     }
 
     public Setor toEntity(SetorDTO setorDTO) {
@@ -19,11 +19,11 @@ public class SetorMapper {
         }
 
         Setor setor = new Setor();
-        if (setorDTO.id() != null) {
-            setor.setId(setorDTO.id());
+        if (setorDTO.idSetor() != null) {
+            setor.setIdSetor(setorDTO.idSetor());
         }
-        setor.setId(setorDTO.id());
-        setor.setSetor(setorDTO.setor());
+        setor.setIdSetor(setorDTO.idSetor());
+        setor.setSetorName(setorDTO.setorName());
 
         return setor;
     }
