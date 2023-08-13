@@ -11,7 +11,7 @@ import java.util.Date;
 
 public record SetorDTO(
 
-        @JsonProperty("id") Long idSetor,
+        @JsonProperty("idSetor") Long idSetor,
 
 
         @NotBlank @NotNull @Length(min = 5, max = 100) String setorName

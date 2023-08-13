@@ -28,10 +28,6 @@ public class Professor {
     @Column(length = 100, nullable = false)
     private String nameProf;
 
-    @ManyToOne
-    @JoinColumn(name = "idsetor")
-    private Setor idsetor;
-
     @NotNull
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date nascimento;
@@ -57,7 +53,7 @@ public class Professor {
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "id_setor")
+    @JoinColumn(name = "idSetor")
     private Setor idSetor;
 
 
@@ -89,14 +85,6 @@ public class Professor {
 
     public void setNameProf(String nameProf) {
         this.nameProf = nameProf;
-    }
-
-    public Setor getIdsetor() {
-        return idsetor;
-    }
-
-    public void setIdsetor(Setor idsetor) {
-        this.idsetor = idsetor;
     }
 
     public Date getNascimento() {

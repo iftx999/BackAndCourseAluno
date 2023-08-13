@@ -60,7 +60,7 @@ public class CrudSpringApplication {
 				setorRepository.deleteAll();
 
 				Setor m = new Setor();
-				m.setSetorName("Admin");
+				m.setSetorName("Administraçao");
 				setorRepository.save(m);
 			};
 	}

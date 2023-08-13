@@ -45,11 +45,13 @@ public class ProfessorService {
     }
 
     public ProfessorDTO create(@Valid @NotNull ProfessorDTO professorDTO) {
+        System.out.println(professorDTO);
         ProfessorDTO dto = professorMapper.toDTO(profesorRepository.save(professorMapper.toEntity(professorDTO)));
         return dto;
     }
 
     public ProfessorDTO update(@NotNull @Positive Long idProfessor, @Valid @NotNull ProfessorDTO professorDTO) {
+        System.out.println(professorDTO);
         return profesorRepository.findById(idProfessor)
                 .map(recordFound -> {
                    // recordFound.setIdProfessor(professorDTO.idProfessor());
@@ -58,6 +60,7 @@ public class ProfessorService {
                     recordFound.setEmail(professorDTO.email());
                     recordFound.setEndereco(professorDTO.endereco());
                     recordFound.setSalario(professorDTO.salario());
+                    recordFound.setIdSetor(professorDTO.idSetor());
                     return professorMapper.toDTO(profesorRepository.save(recordFound));
                 }).orElseThrow(() -> new RecordNotFoundException(idProfessor));
     }

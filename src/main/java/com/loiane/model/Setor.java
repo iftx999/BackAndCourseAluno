@@ -32,15 +32,13 @@ public class Setor {
         this.idSetor = idSetor;
     }
 
-    public String getSetorName() {
-        return setorName;
+    public Setor(Long idSetor) {
+        this.idSetor = idSetor;
     }
 
-    public void setSetorName(String setorName) {
-        this.setorName = setorName;
-    }
 
-    public Setor() {
+    public Setor(){
 
-    }
+     }
+
 }
