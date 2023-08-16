@@ -41,7 +41,7 @@ public class ProfessorController {
         return professorService.create(professor);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{idProfessor}")
     public ProfessorDTO update(@PathVariable @NotNull @Positive Long idProfessor,
                             @RequestBody @Valid @NotNull ProfessorDTO professor) {
         return professorService.update(idProfessor, professor);

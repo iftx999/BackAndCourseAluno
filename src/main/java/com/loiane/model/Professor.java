@@ -52,14 +52,78 @@ public class Professor {
     @Column(length = 100, nullable = false)
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name = "idSetor")
+    private Setor idSetor;
+
+
     @NotNull
     @Column(length = 100, nullable = false)
     private Double salario;
 
+    public Setor getIdSetor() {
+        return idSetor;
+    }
+
+    public void setIdSetor(Setor idSetor) {
+        this.idSetor = idSetor;
+    }
 
 
 
+    public Long getIdProfessor() {
+        return idProfessor;
+    }
 
+    public void setIdProfessor(Long idProfessor) {
+        this.idProfessor = idProfessor;
+    }
 
+    public String getNameProf() {
+        return nameProf;
+    }
 
+    public void setNameProf(String nameProf) {
+        this.nameProf = nameProf;
+    }
+
+    public Date getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(Date nascimento) {
+        this.nascimento = nascimento;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(Double salario) {
+        this.salario = salario;
+    }
 }
