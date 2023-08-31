@@ -1,6 +1,5 @@
 package com.loiane.controller;
 
-import com.loiane.dto.CourseDTO;
 import com.loiane.dto.ProfessorDTO;
 import com.loiane.model.Professor;
 import com.loiane.repository.ProfesorRepository;
@@ -12,7 +11,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.List;
 
 @Validated
@@ -47,9 +54,13 @@ public class ProfessorController {
         return professorService.update(idProfessor, professor);
     }
 
+
+
     @DeleteMapping("/{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable @NotNull @Positive Long id) {
         professorService.delete(id);
     }
+
+
 }

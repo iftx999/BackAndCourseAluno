@@ -24,6 +24,14 @@ public class Setor {
     @Column(length = 100, nullable = false)
     private String setorName;
 
+    public String getSetorName() {
+        return setorName;
+    }
+
+    public void setSetorName(String setorName) {
+        this.setorName = setorName;
+    }
+
     public Long getIdSetor() {
         return idSetor;
     }
