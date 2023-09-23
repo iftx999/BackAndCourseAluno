@@ -29,7 +29,7 @@ public class Professor {
     private String nameProf;
 
     @NotNull
-    @JsonFormat(pattern="yyyy-MM-dd")
+   // @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private Date nascimento;
 
 

@@ -28,9 +28,9 @@ public class SetorController {
         return setorService.list();
     }
 
-    @GetMapping("/{idSetor}")
-    public SetorDTO findById(@PathVariable @NotNull @Positive Long id) {
-        return setorService.findById(id);
+    @GetMapping("/{id}")
+    public SetorDTO findById(@PathVariable @NotNull @Positive Long idSetor) {
+        return setorService.findById(idSetor);
     }
 
     @PostMapping
@@ -39,13 +39,14 @@ public class SetorController {
         return setorService.create(setor);
     }
 
-    @PutMapping("/{idSetor}")
+    @PutMapping("/{id}")
     public SetorDTO update(@PathVariable @NotNull @Positive Long id,
-                           @RequestBody @Valid @NotNull SetorDTO setor) {
+                           @RequestBody @Valid @NotNull SetorDTO setor)
+    {
         return setorService.update(id, setor);
     }
 
-    @DeleteMapping("/{idSetor}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable @NotNull @Positive Long id) {
         setorService.delete(id);
