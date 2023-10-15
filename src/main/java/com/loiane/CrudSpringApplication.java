@@ -43,10 +43,9 @@ public class CrudSpringApplication {
 
 			Professor p = new Professor();
 			p.setNameProf("Serafim");
-			Date nascimento = new Date(); // ou utilize LocalDate.now() se estiver usando Java 8 ou superior
-			p.setNascimento(nascimento);
 			p.setEndereco("Rua Boa morte ");
 			p.setEmail("matheus@gmail.com");
+			p.setNascimento("04041999");
 			p.setTelefone("19988048209");
 			p.setSalario(3.4);
 

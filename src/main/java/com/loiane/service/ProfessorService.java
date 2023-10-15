@@ -1,12 +1,8 @@
 package com.loiane.service;
 
-import com.loiane.dto.AlunoDTO;
 import com.loiane.dto.ProfessorDTO;
-import com.loiane.dto.mapper.AlunoMapper;
 import com.loiane.dto.mapper.ProfessorMapper;
 import com.loiane.exception.RecordNotFoundException;
-import com.loiane.repository.AlunoRepository;
-import com.loiane.repository.CourseRepository;
 import com.loiane.repository.ProfesorRepository;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -68,6 +64,11 @@ public class ProfessorService {
     public void delete(@PathVariable @NotNull @Positive Long idProfessor) {
         profesorRepository.delete(profesorRepository.findById(idProfessor)
                 .orElseThrow(() -> new RecordNotFoundException(idProfessor)));
+    }
+
+
+    public List<ProfessorDTO> getAllColaboradores() {
+        return profesorRepository.findAllBy();
     }
 }
 

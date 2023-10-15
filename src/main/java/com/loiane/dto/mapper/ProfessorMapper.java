@@ -11,7 +11,7 @@ public class ProfessorMapper {
         if (professor == null) {
             return null;
         }
-        return new ProfessorDTO(professor.getIdProfessor(), professor.getNameProf(),  professor.getNascimento(), professor.getEndereco(), professor.getTelefone(), professor.getSalario(), professor.getEmail(), professor.getIdSetor() );
+        return new ProfessorDTO(professor.getIdProfessor(), professor.getNameProf(), professor.getNascimento(), professor.getEndereco(), professor.getEmail(), professor.getSalario(), professor.getTelefone(), professor.getIdSetor());
     }
 
     public Professor toEntity(ProfessorDTO professorDTO) {

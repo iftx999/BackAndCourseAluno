@@ -18,8 +18,8 @@ public record ProfessorDTO(
 
 
         @NotNull
-       // @JsonFormat(pattern = "dd/MM/yyyy")
-        Date nascimento,
+        @JsonFormat(pattern = "dd/MM/yyyy")
+        String nascimento,
 
         @NotBlank @NotNull @Length(min = 5, max = 100) String endereco,
 

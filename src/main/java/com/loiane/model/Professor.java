@@ -29,8 +29,8 @@ public class Professor {
     private String nameProf;
 
     @NotNull
-   // @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private Date nascimento;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    private String nascimento;
 
 
     @NotBlank
@@ -87,11 +87,11 @@ public class Professor {
         this.nameProf = nameProf;
     }
 
-    public Date getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(Date nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 
